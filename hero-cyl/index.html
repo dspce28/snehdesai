@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Change Your Life — Sneh Desai Live in Mumbai</title>
+<meta name="description" content="Change Your Life, Sneh Desai's signature 3-day live event. 25–27 December 2026, Jio World Convention Centre, Mumbai. Claim your seat.">
+<link rel="preload" href="assets/fonts/bodoni-moda.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/jost.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" href="assets/back.webp">
+<style>
+  @font-face { font-family: "Bodoni Moda"; src: url(assets/fonts/bodoni-moda.woff2) format("woff2"); font-weight: 400 500; font-style: normal; font-display: swap; }
+  @font-face { font-family: "Bodoni Moda"; src: url(assets/fonts/bodoni-moda-italic.woff2) format("woff2"); font-weight: 400 500; font-style: italic; font-display: swap; }
+  @font-face { font-family: Jost; src: url(assets/fonts/jost.woff2) format("woff2"); font-weight: 300 500; font-display: swap; }
+  html, body { margin: 0; background: #05070d; color: #f4f1ea; }
+  :root { --u: 1px; --night: #05070d; --ink: #0c0c0b; --brass: #c9a46a; --brass-hi: #dcbd86; --ivory: #f4f1ea;
+          --serif: "Bodoni Moda", Didot, "Bodoni 72", Georgia, serif; --sans: Jost, Futura, "Century Gothic", system-ui, sans-serif; }
+  * { box-sizing: border-box; }
+  body { font-family: var(--sans); }
+
+  .hero { position: relative; height: 100svh; min-height: 320px; overflow: hidden; isolation: isolate; background: var(--night); }
+  .stage { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }   /* always covers the hero; sized in JS to the layers' aspect ratio */
+  .layer { position: absolute; inset: 0; }
+  .layer img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+  .back { transform-origin: 50% 40%; } .mid { transform-origin: 50% 45%; } .front { transform-origin: 50% 100%; }
+  .mid img { height: 104%; }   /* bleed so the city's lift never opens a gap at the bottom */
+  /* the shade and sky drift live on the city layer so its hazy sky edges shade the same as the sky behind them */
+  .shade { position: absolute; left: 0; right: 0; top: 0; height: 50%; background: linear-gradient(rgba(4, 6, 14, .6), transparent); }
+  .clouds { position: absolute; inset: 0 0 52% 0; overflow: hidden; mix-blend-mode: screen; opacity: .6; pointer-events: none; }
+  .clouds i { position: absolute; left: -40%; width: 180%; height: 100%; animation: drift 70s linear infinite;
+    background: radial-gradient(28% 7% at 20% 32%, rgba(255,190,140,.22), transparent 70%), radial-gradient(22% 5% at 62% 26%, rgba(255,170,130,.18), transparent 70%),
+                radial-gradient(30% 6% at 84% 44%, rgba(200,170,255,.14), transparent 70%), radial-gradient(18% 4% at 40% 52%, rgba(255,200,160,.16), transparent 70%); }
+  .clouds i:nth-child(2) { top: 8%; opacity: .7; animation-duration: 110s; animation-direction: reverse; filter: blur(6px); }
+  @keyframes drift { to { transform: translateX(22%); } }
+  @media (prefers-reduced-motion: reduce) { .clouds i { animation: none; } }
+
+  .headline { position: absolute; top: 0; bottom: 0; pointer-events: none; }
+  .kicker { position: absolute; left: 0; width: 100%; margin: 0; text-align: center; font-family: var(--serif); font-style: italic; font-weight: 400; letter-spacing: -.01em; line-height: 1; white-space: nowrap; text-shadow: 0 2px 30px rgba(0,0,0,.35); }
+  .word { position: absolute; left: 0; width: 100%; margin: 0; text-align: center; font-family: var(--serif); font-weight: 400; letter-spacing: -.035em; line-height: 1; white-space: nowrap; text-shadow: 0 4px 60px rgba(0,0,0,.25); }
+  .word span { display: inline-block; }
+
+  .nav { position: absolute; z-index: 5; left: 0; right: 0; top: calc(52 * var(--u)); height: calc(48 * var(--u)); padding: 0 calc(125 * var(--u));
+         display: flex; align-items: center; justify-content: space-between; font-size: calc(15 * var(--u)); }
+  .mark { font-family: var(--serif); font-weight: 500; font-size: calc(18 * var(--u)); letter-spacing: .3em; color: var(--ivory); text-decoration: none; white-space: nowrap; }
+  .pill { position: absolute; left: 50%; top: 0; height: 100%; transform: translateX(-50%); display: flex; align-items: center; gap: calc(6 * var(--u)); padding: calc(5 * var(--u));
+          border-radius: 999px; background: rgba(255, 255, 255, .10); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+          /* brass outline: a thin warm ring with a soft glow */
+          box-shadow: 0 0 0 1px rgba(220, 189, 134, .75), inset 0 0 calc(10 * var(--u)) rgba(220, 189, 134, .18), 0 0 calc(18 * var(--u)) rgba(201, 164, 106, .35); }
+  .pill a { display: flex; align-items: center; justify-content: center; height: calc(38 * var(--u)); padding: 0 calc(22 * var(--u)); border-radius: 999px; color: rgba(244, 241, 234, .88);
+            text-decoration: none; font-weight: 400; white-space: nowrap; transition: background-color .25s; }
+  .pill a:hover { background: rgba(255, 255, 255, .14); }
+  .pill a.active { background: var(--ivory); color: var(--ink); font-weight: 500; }
+  .right { display: flex; align-items: center; gap: calc(30 * var(--u)); }
+  .lang { display: flex; align-items: center; gap: calc(9 * var(--u)); color: rgba(244, 241, 234, .9); white-space: nowrap; }
+  .lang svg { width: calc(20 * var(--u)); height: calc(20 * var(--u)); }
+  .cta { display: flex; align-items: center; height: calc(44 * var(--u)); padding: 0 calc(26 * var(--u)); border-radius: 999px; background: var(--brass); color: var(--ink);
+         font-weight: 500; font-size: calc(12 * var(--u)); letter-spacing: .22em; text-transform: uppercase; text-decoration: none; white-space: nowrap; transition: transform .2s, background-color .2s; }
+  .cta:hover { transform: translateY(-1px); background: var(--brass-hi); }
+  .cta .short { display: none; }
+  .nav a:focus-visible { outline: 2px solid var(--ivory); outline-offset: 3px; }
+
+  .event { position: absolute; z-index: 5; left: calc(125 * var(--u)); right: calc(125 * var(--u)); bottom: calc(40 * var(--u)); display: flex; align-items: center; gap: calc(16 * var(--u));
+           font-size: calc(12 * var(--u)); letter-spacing: .28em; text-transform: uppercase; color: rgba(244, 241, 234, .88); }
+  .event .rule { flex: none; height: 1px; width: calc(48 * var(--u)); background: var(--brass); transform-origin: left; }
+  .event span { white-space: nowrap; text-shadow: 0 1px 12px rgba(0, 0, 0, .7); }
+  .event .sig { color: var(--brass-hi); }
+  .event .dot { color: var(--brass); }
+
+  .world { position: absolute; inset: 0; transform-origin: 50% 60%; }
+  .opening { position: absolute; inset: 0; z-index: 6; overflow: hidden; background: var(--night); }
+  .opening img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; transform-origin: 50% 70%; }
+  .intro-signature { position: absolute; z-index: 1; top: calc(clamp(62px, 10svh, 110px) + 28px); left: 5%; width: 90%; margin: 0;
+    font-family: var(--serif); font-weight: 400; font-size: clamp(26px, 3.6vw, 52px);
+    line-height: 1.15; letter-spacing: .16em; text-indent: .16em; text-transform: uppercase; text-align: center; color: var(--ivory); pointer-events: none;
+    text-shadow: 0 2px 18px rgba(5, 7, 13, .8), 0 0 36px rgba(201, 164, 106, .3);
+    transform-origin: 50% 70%; opacity: 0; }
+  .intro-welcome { display: block; margin-bottom: 14px; font-family: var(--sans); font-size: .3em; font-weight: 400; letter-spacing: .5em; text-indent: .5em; color: var(--brass-hi); }
+  .doors { position: absolute; inset: 0; z-index: 7; }
+  .doors i { position: absolute; top: 0; bottom: 0; width: 50%; background: #070606 url(assets/curtains.webp) no-repeat; background-size: 200% 100%; }
+  .doors .l { left: 0; background-position: 0 50%; } .doors .r { right: 0; background-position: 100% 50%; }
+  .doors b { position: absolute; top: 50%; transform: translateY(-50%); font-family: var(--serif); font-weight: 400; font-size: clamp(40px, 7vh, 80px); line-height: 1; color: #c9a46a; text-shadow: 0 0 18px rgba(201, 164, 106, .3); }
+  .doors .l b { right: .06em; } .doors .r b { left: .06em; }
+  .hero.done .opening, .hero.done .doors { display: none; }
+
+  .hero.intro .nav, .hero.intro .event, .hero.intro .kicker, .hero.intro .word span { opacity: 0; }
+  .hero.intro .front { transform: translateY(66%); }
+
+  @media (max-width: 820px) {
+    .nav { top: 16px; height: auto; padding: 0 18px; flex-wrap: wrap; row-gap: 12px; font-size: 13px; }
+    .mark { font-size: 14px; letter-spacing: .22em; }
+    .lang svg { width: 16px; height: 16px; } .lang { gap: 6px; font-size: 12px; } .right { gap: 14px; }
+    .cta { height: 36px; padding: 0 16px; font-size: 11px; letter-spacing: .16em; }
+    .pill { position: static; transform: none; order: 3; width: 100%; height: 40px; padding: 4px; gap: 4px; }
+    .pill a { flex: 1; height: 32px; padding: 0 8px; font-size: 12px; }
+    .event { left: 16px; right: 16px; bottom: 28px; justify-content: center; flex-wrap: wrap; text-align: center; gap: 8px 12px; font-size: 10px; letter-spacing: .2em; }
+    .event .rule, .event .dot { display: none; }
+    .event .sig { flex-basis: 100%; }
+  }
+  @media (max-width: 380px) { .pill a { font-size: 11px; padding: 0 4px; } .cta .long { display: none; } .cta .short { display: inline; } .lang svg { display: none; } }
+  @media (max-height: 500px) and (min-width: 561px) and (orientation: landscape) {
+    .nav { top: 12px; height: 34px; padding: 0 24px; flex-wrap: nowrap; font-size: 12px; }
+    .mark { font-size: 13px; letter-spacing: .28em; }
+    .pill { position: absolute; left: 50%; top: 0; height: 34px; transform: translateX(-50%); width: auto; order: 0; padding: 3px; }
+    .pill a { flex: none; height: 28px; padding: 0 14px; font-size: 12px; }
+    .cta { height: 32px; padding: 0 18px; font-size: 10px; } .right { gap: 18px; } .lang svg { width: 16px; height: 16px; }
+    .event { left: 24px; right: 24px; bottom: 12px; font-size: 9px; letter-spacing: .14em; gap: 10px; flex-wrap: nowrap; justify-content: flex-start; }
+    .event .rule { width: 28px; }
+    .event .sig { flex-basis: auto; }
+  }
+</style>
+</head>
+<body>
+<section class="hero intro" id="hero" aria-label="Change Your Life, Sneh Desai's signature event in Mumbai">
+  <div class="stage" id="stage"><div class="world" id="world">
+    <div class="layer back" id="back"><img id="imgBack" src="assets/back.webp" alt="" aria-hidden="true"></div>
+    <div class="layer mid" id="mid"><img id="imgMid" src="assets/mid.webp" alt="" aria-hidden="true"><div class="clouds" aria-hidden="true"><i></i><i></i></div><div class="shade" id="shade"></div></div>
+    <div class="headline" id="headline">
+      <p class="kicker" id="kicker" aria-hidden="true">Change Your</p>
+      <h1 class="word" id="word" aria-label="Change Your Life"></h1>
+    </div>
+    <div class="layer front" id="front"><img id="imgFront" src="assets/front.webp" alt="Sneh Desai seen from behind, looking out over Marine Drive and the Arabian Sea at dusk"></div>
+  </div></div>
+
+  <header class="nav" id="nav">
+    <a class="mark" href="#">SNEH DESAI</a>
+    <nav class="pill" aria-label="Main">
+      <a class="active" href="#" aria-current="page">Home</a><a href="#">Programmes</a><a href="#">The Story</a><a href="#">Library</a>
+    </nav>
+    <div class="right">
+      <span class="lang"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="10" cy="10" r="8.25"/><path d="M1.75 10h16.5"/><path d="M10 1.75c-3.6 4.4-3.6 12.1 0 16.5M10 1.75c3.6 4.4 3.6 12.1 0 16.5"/></svg>EN&nbsp;|&nbsp;ગુ</span>
+      <a class="cta" id="cta" href="https://cyl.snehdesai.com"><span class="long">Claim Your Seat</span><span class="short">Book Seat</span></a>
+    </div>
+  </header>
+
+  <p class="event" id="event"><span class="rule" id="rule"></span><span class="sig">The Signature Event</span><span class="dot">&middot;</span><span>3 Days Live</span><span class="dot">&middot;</span><span>25&nbsp;&ndash;&nbsp;27 Dec 2026</span><span class="dot">&middot;</span><span>Jio World Convention Centre, Mumbai</span></p>
+
+  <div class="opening" id="opening"><img id="imgAerial" src="assets/aerial.webp" alt="" aria-hidden="true"><p class="intro-signature" id="introSignature" aria-hidden="true"><span class="intro-welcome">Sneh Desai presents</span>The Signature Event</p></div>
+  <div class="doors" id="doors"><i class="l" id="doorL"><b>S</b></i><i class="r" id="doorR"><b>D</b></i></div>
+</section>
+
+<script>
+const $ = id => document.getElementById(id);
+const hero = $('hero'), stage = $('stage'), headline = $('headline'), word = $('word'), kicker = $('kicker');
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const freezeAt = new URLSearchParams(location.search).has('t') ? +new URLSearchParams(location.search).get('t') : null;   // ?t=2.5 freezes the intro at 2.5 s (for review)
+const WORD = 'Life', KICK = 'Change Your';
+const R = 2000 / 1412;                         // aspect ratio of the layer images (sky extended upward)
+const KR = .32;                                // kicker size relative to the giant word
+for (const ch of WORD) { const s = document.createElement('span'); s.textContent = ch; s.setAttribute('aria-hidden', 'true'); word.append(s); }
+
+/* ---------------- layout ---------------- */
+const ratio = { w: 1.6, base: .8, kw: 5, kbase: .8 };
+function measure(font, text) {
+  const m = document.createElement('div');
+  m.style.cssText = `position:absolute;visibility:hidden;left:0;top:0;white-space:nowrap;font:${font};line-height:1`;
+  m.innerHTML = `<span style="display:inline-block">${text}</span><i style="display:inline-block;width:0;height:0;vertical-align:baseline"></i>`;
+  document.body.append(m);
+  const r = { w: m.firstChild.getBoundingClientRect().width / 100, base: m.lastChild.offsetTop / 100 };
+  m.remove(); return r;
+}
+function measureWord() {
+  const a = measure('400 100px "Bodoni Moda",Georgia,serif;letter-spacing:-.035em', WORD);
+  const b = measure('italic 400 100px "Bodoni Moda",Georgia,serif;letter-spacing:-.01em', KICK);
+  Object.assign(ratio, { w: a.w, base: a.base, kw: b.w, kbase: b.base });
+}
+function layout() {
+  const vw = hero.clientWidth, vh = hero.clientHeight;
+  const small = vw <= 820 || (vh <= 500 && vw > vh);
+  const u = small ? 1 : Math.min(vw / 1440, vh / 900);
+  document.documentElement.style.setProperty('--u', u + 'px');
+
+  const sw = Math.max(vw, vh * R), sh = sw / R;
+  stage.style.width = sw + 'px'; stage.style.height = sh + 'px';
+  const portrait = vh > 1.2 * vw;
+  const baseY = (portrait ? .462 : .47) * sh;                         // baseline of "Life" in the stage; Sneh's head top is at 42.6%
+  const baselineView = (vh - sh) / 2 + baseY;
+  const nav = $('nav'), navBottom = nav.offsetTop + nav.offsetHeight;
+
+  // the kicker sits on the word's cap line, so the room above the baseline holds both
+  const CAP = .8, GAP = .03;                                          // Bodoni's L and f rise to about .8 em above the baseline
+  const fa = .48 * sw / ratio.w, fb = .8 * vw / ratio.w, fk = .92 * vw / (ratio.kw * KR);
+  const fc = (baselineView - (navBottom + .03 * vh)) / (CAP + GAP + KR * ratio.kbase);
+  const F = Math.max(40, Math.min(fa, fb, fc, fk));
+  headline.style.left = (sw - vw) / 2 + 'px'; headline.style.width = vw + 'px';
+  word.style.fontSize = F + 'px'; word.style.top = (baseY - ratio.base * F) + 'px';
+  const kF = KR * F;
+  kicker.style.fontSize = kF + 'px'; kicker.style.top = (baseY - (CAP + GAP) * F - ratio.kbase * kF) + 'px';
+}
+measureWord(); layout();
+document.fonts.ready.then(() => { measureWord(); layout(); });
+new ResizeObserver(layout).observe(hero);
+
+/* ---------------- the intro: one clock, every motion a paused Web Animation ---------------- */
+const DUR = 7400, anims = [];
+const S = 2400;                                  // the layered part starts here, after the curtains and the rooftop move
+function seq(el, pts) {
+  const kf = [];
+  if (pts[0][0] > 0) kf.push({ offset: 0, ...pts[0][1], easing: 'linear' });
+  for (const [t, props, easing] of pts) kf.push({ offset: t / DUR, ...props, easing: easing || 'linear' });
+  if (pts.at(-1)[0] < DUR) kf.push({ offset: 1, ...pts.at(-1)[1] });
+  const a = el.animate(kf, { duration: DUR, fill: 'both' });
+  a.pause(); a.currentTime = 0; anims.push(a);
+}
+const ty = v => ({ transform: `translateY(${v})` });
+const EASE_TEXT = 'cubic-bezier(.2,.65,.3,1)';
+const sc = (s, y) => ({ transform: `translateY(${y}) scale(${s})` });
+// 1. the curtains part from the centre seam
+seq($('doorL'), [[20, { transform: 'translateX(0)' }, 'cubic-bezier(.1,.2,.8,1)'], [1250, { transform: 'translateX(-101%)' }]]);
+seq($('doorR'), [[20, { transform: 'translateX(0)' }, 'cubic-bezier(.4,.6,.9,1)'], [1350, { transform: 'translateX(101%)' }]]);
+// the opening title is revealed behind the curtains, over the terrace, on the same clock
+seq($('introSignature'), [
+  [260, { opacity: 0, clipPath: 'inset(0 100% 0 0)', transform: 'translateY(22px) scale(.9)' }, 'cubic-bezier(.16,1,.3,1)'],
+  [1250, { opacity: 1, clipPath: 'inset(-25% -10% -25% -10%)', transform: 'translateY(0) scale(1)' }],
+  [1850, { opacity: 1, clipPath: 'inset(-25% -10% -25% -10%)', transform: 'translateY(0) scale(1)' }, 'ease-in-out'],
+  [2350, { opacity: 0, clipPath: 'inset(-25% -10% -25% -10%)', transform: 'translateY(-12px) scale(1.035)' }]
+]);
+// 2. the camera moves from the terrace rail out to the bay: the close shot pushes forward and dissolves into the full scene
+seq($('imgAerial'), [[20, sc(1, '0%'), 'cubic-bezier(.4,0,.35,1)'], [2900, sc(1.55, '22%')]]);
+seq($('opening'), [[1500, { opacity: 1 }, 'cubic-bezier(.45,0,.55,1)'], [S + 250, { opacity: 0 }]]);
+seq($('world'), [[20, sc(1.55, '6%'), 'cubic-bezier(.3,0,.3,1)'], [S + 900, sc(1, '0%')]]);
+// 3. the layered scene
+seq($('nav'), [[S, { opacity: 0, transform: 'translateY(-6px)' }, 'ease-out'], [S + 300, { opacity: 1, transform: 'translateY(0)' }]]);
+seq(kicker, [[S, { opacity: 0, transform: 'translateY(.5em)' }, EASE_TEXT], [S + 650, { opacity: 1, transform: 'translateY(0)' }]]);
+[...word.children].forEach((s, i) => seq(s, [[S + i * 70, { opacity: 0, transform: 'translateY(.14em)' }, EASE_TEXT], [S + 700 + i * 70, { opacity: 1, transform: 'translateY(0)' }]]));
+seq($('shade'), [[S + 500, { opacity: 0 }, 'ease-in-out'], [S + 1300, { opacity: 1 }]]);
+// the back layer drifts up and then eases back to rest before the end, so cancelling the animations at the end causes no jump
+seq($('back'), [[S + 500, ty('0'), 'cubic-bezier(.45,0,.35,1)'], [S + 1900, ty('-1.5%'), 'cubic-bezier(.45,0,.55,1)'], [S + 4500, ty('0')]]);
+seq($('mid'), [[S + 500, ty('0'), 'cubic-bezier(.45,0,.3,1)'], [S + 1900, ty('-4%')], [S + 2200, ty('-4%'), 'cubic-bezier(.45,0,.55,1)'], [S + 4500, ty('0')]]);
+seq(headline, [[S + 600, ty('6%'), 'cubic-bezier(.3,0,.4,1)'], [S + 2400, ty('0')]]);
+// the front layer only ever moves down or to rest, so its bottom edge never lifts off the frame
+seq($('front'), [[S + 950, ty('66%'), 'cubic-bezier(.2,.5,.2,1)'], [S + 3900, ty('0')]]);
+// the event line arrives once Sneh has settled
+seq($('event'), [[S + 3300, { opacity: 0, transform: 'translateY(8px)' }, 'ease-out'], [S + 4100, { opacity: 1, transform: 'translateY(0)' }]]);
+seq($('rule'), [[S + 3300, { transform: 'scaleX(0)' }, 'ease-out'], [S + 4200, { transform: 'scaleX(1)' }]]);
+
+function finish() { anims.forEach(a => a.cancel()); hero.classList.remove('intro'); hero.classList.add('done'); }
+let t0 = 0;
+function tick(now) {
+  const e = Math.min(now - t0, DUR);
+  anims.forEach(a => { a.currentTime = e; });
+  if (e >= DUR) finish(); else requestAnimationFrame(tick);
+}
+function start() {
+  if (t0) return;
+  if (reduce) { finish(); t0 = 1; return; }
+  if (freezeAt !== null) { anims.forEach(a => { a.currentTime = freezeAt * 1000; }); t0 = 1; return; }
+  t0 = performance.now(); requestAnimationFrame(tick);
+}
+const loaded = el => new Promise(r => { if (el.complete && el.naturalWidth) r(); else { el.addEventListener('load', r, { once: true }); el.addEventListener('error', r, { once: true }); } });
+Promise.all([
+  ...['imgBack', 'imgMid', 'imgFront', 'imgAerial'].map(id => loaded($(id))),
+  document.fonts.load('400 46px "Bodoni Moda"').catch(() => [])
+]).then(() => setTimeout(start, 120));
+setTimeout(start, 4000);                                             // failsafe
+</script>
+</body>
+</html>

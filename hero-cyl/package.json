@@ -1,0 +1,11 @@
+{
+  "name": "sneh-desai-cyl-hero",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "npx --yes http-server@14.1.1 . -c-1",
+    "assets": "node download-assets.mjs",
+    "build": "node build.mjs"
+  }
+}

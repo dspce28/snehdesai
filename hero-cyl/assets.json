@@ -1,0 +1,45 @@
+[
+  {
+    "file": "assets/back.webp",
+    "bytes": 96748,
+    "sha256": "9ad05f7168e3c4030f40aee2dd9dae27dc6c3bee4ffece43422a3b95eb2c4106"
+  },
+  {
+    "file": "assets/mid.webp",
+    "bytes": 105190,
+    "sha256": "664b033fc1be6c5cacb311592063330b6023dde6310fbc8d01ababf6e6eae8b4"
+  },
+  {
+    "file": "assets/front.webp",
+    "bytes": 31680,
+    "sha256": "330bdbb92988eb33bd37f8e14a8ac370786ad6596a8ab0cea7755fb8f3414e8e"
+  },
+  {
+    "file": "assets/aerial.webp",
+    "bytes": 102892,
+    "sha256": "c235f8b228e12656e7315639abdd9a958bffe423a53d6b0faaacd3758eb0b7f3"
+  },
+  {
+    "file": "assets/curtains.webp",
+    "bytes": 19460,
+    "sha256": "d3ef7980c27b70a724f5e14a5af9641ef5e7e665ecdd2876edc56363cc28f90c"
+  },
+  {
+    "file": "assets/fonts/bodoni-moda.woff2",
+    "url": "https://fonts.gstatic.com/s/bodonimoda/v28/aFTQ7PxzY382XsXX63LUYJSKSKg.woff2",
+    "bytes": 46260,
+    "sha256": "c032219ef636f7b4932f7d1dc91bdab602c970f090770b546bea4effaab3463c"
+  },
+  {
+    "file": "assets/fonts/bodoni-moda-italic.woff2",
+    "url": "https://fonts.gstatic.com/s/bodonimoda/v28/aFTS7PxzY382XsXX63LUYJSPeKrcWw.woff2",
+    "bytes": 53756,
+    "sha256": "b737328c13b92784ee78d99e62e3bcc38eeef0f2dba41d107637b3acea46781f"
+  },
+  {
+    "file": "assets/fonts/jost.woff2",
+    "url": "https://fonts.gstatic.com/s/jost/v20/92zatBhPNqw73oTd4g.woff2",
+    "bytes": 26576,
+    "sha256": "7726a5cd6f3c0e876c028ea2a643d45f7aad4b0f164b70966c669f4a4668f4b9"
+  }
+]
