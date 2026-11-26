@@ -1,23 +1,23 @@
 [
   {
     "file": "assets/back.webp",
-    "bytes": 96748,
-    "sha256": "9ad05f7168e3c4030f40aee2dd9dae27dc6c3bee4ffece43422a3b95eb2c4106"
+    "bytes": 122548,
+    "sha256": "4ca89a41e061b93b3f9df0a430a5ccdb14f588fe6381518fad1e7c3a1cd0e246"
   },
   {
     "file": "assets/mid.webp",
-    "bytes": 105190,
-    "sha256": "664b033fc1be6c5cacb311592063330b6023dde6310fbc8d01ababf6e6eae8b4"
+    "bytes": 83758,
+    "sha256": "87491064033936731365ace2c07b3222a53a642b916d188fb99ce51c27058765"
   },
   {
     "file": "assets/front.webp",
-    "bytes": 60258,
-    "sha256": "b0553c20267a6c74f634f8469f078b55a1634eea8db2c109792ca6dba55459b7"
+    "bytes": 48340,
+    "sha256": "a6bd372eeb1b561a70ce1e7a12b395191fdb08a6da4ba9f88864acf77aa2226d"
   },
   {
     "file": "assets/aerial.webp",
-    "bytes": 102892,
-    "sha256": "c235f8b228e12656e7315639abdd9a958bffe423a53d6b0faaacd3758eb0b7f3"
+    "bytes": 96748,
+    "sha256": "9ad05f7168e3c4030f40aee2dd9dae27dc6c3bee4ffece43422a3b95eb2c4106"
   },
   {
     "file": "assets/curtains.webp",
